@@ -5,20 +5,18 @@ package:
   version: {{ version }}
 
 source:
-  fn: cligj-0.4.0.tar.gz
   url: https://pypi.io/packages/source/c/cligj/cligj-{{ version }}.tar.gz
   sha256: 12ad07994f5c1173b06087ffbaacec52f9ebe4687926e5aacfc22b6b0c8b3f54
 
 build:
-  noarch: python
   number: 1
-  script: python -m pip install --no-deps --ignore-installed .
+  noarch: python
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
   host:
     - pip
     - python
-    - setuptools
     - click >=4.0
   run:
     - python
