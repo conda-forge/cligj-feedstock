@@ -11,26 +11,29 @@ source:
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
+    - python <4.0
     - pip
-    - python
-    - click >=4.0
   run:
-    - python
-    - click >=4.0
+    - python <4.0
+    - click >=4.0,<8
 
 test:
   imports:
     - cligj
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/mapbox/cligj
-  license: BSD 3-Clause
-  license_file: {{ environ["RECIPE_DIR"] }}/LICENSE
-  summary: Click params for commmand line interfaces to GeoJSON.
+  license: BSD-3-Clause
+  license_file: LICENSE
+  summary: Click params for commmand line interfaces to GeoJSON
 
 extra:
   recipe-maintainers:
