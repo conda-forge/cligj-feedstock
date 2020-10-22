@@ -1,4 +1,4 @@
-{% set version = "0.6.0" %}
+{% set version = "0.7.0" %}
 
 package:
   name: cligj
@@ -6,31 +6,34 @@ package:
 
 source:
   url: https://pypi.io/packages/source/c/cligj/cligj-{{ version }}.tar.gz
-  sha256: a5f080858fd584d73fcc2b75f80ed05054130944e2283019d1828a6deb9e4110
+  sha256: 2bf2042a81be581d707f726aef5efbbd935a62af85d5521305026dabeb798f5d
 
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
+    - python <4.0
     - pip
-    - python
-    - click >=4.0
   run:
-    - python
-    - click >=4.0
+    - python <4.0
+    - click >=4.0,<8
 
 test:
   imports:
     - cligj
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/mapbox/cligj
-  license: BSD 3-Clause
-  license_file: {{ environ["RECIPE_DIR"] }}/LICENSE
-  summary: Click params for commmand line interfaces to GeoJSON.
+  license: BSD-3-Clause
+  license_file: LICENSE
+  summary: Click params for commmand line interfaces to GeoJSON
 
 extra:
   recipe-maintainers:
