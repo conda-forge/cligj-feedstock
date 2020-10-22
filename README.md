@@ -3,11 +3,11 @@ About cligj
 
 Home: https://github.com/mapbox/cligj
 
-Package license: BSD 3-Clause
+Package license: BSD-3-Clause
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cligj-feedstock/blob/master/LICENSE.txt)
 
-Summary: Click params for commmand line interfaces to GeoJSON.
+Summary: Click params for commmand line interfaces to GeoJSON
 
 Current build status
 ====================
