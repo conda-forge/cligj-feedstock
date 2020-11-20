@@ -1,4 +1,4 @@
-{% set version = "0.7.0" %}
+{% set version = "0.7.1" %}
 
 package:
   name: cligj
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/c/cligj/cligj-{{ version }}.tar.gz
-  sha256: 2bf2042a81be581d707f726aef5efbbd935a62af85d5521305026dabeb798f5d
+  sha256: b2f1f7247d59a5387bd3013a08b9ed6829e96fafa4a6e6292341efdb46fe6220
 
 build:
   number: 0
